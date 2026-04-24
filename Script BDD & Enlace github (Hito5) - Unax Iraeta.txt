@@ -1,0 +1,51 @@
+Enlace GitHub: https://github.com/UnaxIraeta97/Deberes_Programacion.git
+
+
+CREATE DATABASE galeria;
+USE galeria;
+
+CREATE TABLE Pintores (
+    IdPintor INT,
+    Nombre VARCHAR(40),
+    Premiado BOOLEAN,
+    UNIQUE KEY (IdPintor)
+);
+
+CREATE TABLE Pinturas (
+    IdPintura INT,
+    Titulo VARCHAR(60),
+    Fecha DATE,
+    Archivo VARCHAR(100),
+    Visitas INT,
+    IdPintor INT,
+    UNIQUE KEY (IdPintura),
+    FOREIGN KEY (IdPintor) REFERENCES Pintores(IdPintor)
+);
+
+INSERT INTO Pintores VALUES (1,'Vincent van Gogh', 0);
+INSERT INTO Pintores VALUES (2,'Ansel Adams', 0);
+INSERT INTO Pintores VALUES (3,'El Bosco', 0);
+INSERT INTO Pintores VALUES (4,'Salvador Dali', 0);
+INSERT INTO Pintores VALUES (5,'Edvard Munch', 0);
+INSERT INTO Pintores VALUES (6,'Rene Magritte', 0);
+INSERT INTO Pintores VALUES (7,'Mark Rothko', 0);
+
+INSERT INTO Pinturas VALUES (1, 'La noche estrellada', '1889-01-01', 'vangogh1.jpg', 0, 1);
+INSERT INTO Pinturas VALUES (2, 'Campo de trigo con cipreses', '1889-01-01', 'vangogh2.jpg', 0, 1);
+INSERT INTO Pinturas VALUES (3, 'Clearing Winter Storm', '1944-01-01', 'anseladams1.jpg', 0, 2);
+INSERT INTO Pinturas VALUES (4, 'The Face of Half Dome', '1927-01-01', 'anseladams2.jpg', 0, 2);
+INSERT INTO Pinturas VALUES (5, 'El jardin de las delicias', '1500-01-01', 'bosco1.jpg', 0, 3);
+INSERT INTO Pinturas VALUES (6, 'Adan y Eva', '1500-01-01', 'bosco2.jpg', 0, 3);
+INSERT INTO Pinturas VALUES (7, 'El descenso de Cristo al infierno', '1550-01-01', 'bosco3.jpg', 0, 3);
+INSERT INTO Pinturas VALUES (8, 'La angustia del infierno', '1540-01-01', 'bosco4.jpg', 0, 3);
+INSERT INTO Pinturas VALUES (9, 'Elefante', '1948-01-01', 'dali1.jpg', 0, 4);
+INSERT INTO Pinturas VALUES (10, 'Persistencia de la memoria', '1931-01-01', 'dali2.jpg', 0, 4);
+INSERT INTO Pinturas VALUES (11, 'El grito', '1893-01-01', 'munch1.jpg', 0, 5);
+INSERT INTO Pinturas VALUES (12, 'La noche en Karl Johan Street', '1892-01-01', 'munch2.jpg', 0, 5);
+INSERT INTO Pinturas VALUES (13, 'La madre muerta y su hija', '1897-01-01', 'munch3.jpg', 0, 5);
+INSERT INTO Pinturas VALUES (14, 'El hijo del hombre', '1964-01-01', 'magritte1.jpg', 0, 6);
+INSERT INTO Pinturas VALUES (15, 'Los amantes', '1928-01-01', 'magritte2.jpg', 0, 6);
+INSERT INTO Pinturas VALUES (16, 'Golconde', '1953-01-01', 'magritte3.jpg', 0, 6);
+INSERT INTO Pinturas VALUES (17, 'No. 10', '1950-01-01', 'rothko1.jpg', 0, 7);
+INSERT INTO Pinturas VALUES (18, 'Blanco sobre rojo', '1957-01-01', 'rothko2.jpg', 0, 7);
+INSERT INTO Pinturas VALUES (19, 'Negro sobre gris', '1969-01-01', 'rothko3.jpg', 0, 7);
